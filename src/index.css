@@ -5,6 +5,10 @@
 
 /*Montserrat Font*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.main-screen
+{
+  @apply h-[88vh] w-[94%]  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex
+}
 .input-box{
   @apply p-2 border border-gray-300 rounded-md text-sm w-full
 }
@@ -12,7 +16,7 @@
   @apply text-xs text-[#060608] font-bold
 }
 .heading{
-  @apply text-xl text-center font-['Montserrat'] font-bold
+  @apply text-xl  font-['Montserrat'] font-bold
 }
 .subheading{
   @apply text-lg font-['Montserrat'] font-bold
