@@ -5,19 +5,55 @@
 
 /*Montserrat Font*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+  @apply font-['Montserrat']
+}
 .main-screen
 {
-  @apply h-[88vh] w-[94%]  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex
+  @apply h-[88vh] w-[50%]  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex
 }
+
 .input-box{
-  @apply p-2 border border-gray-300 rounded-md text-sm w-full
+  @apply p-2 mt-2 mb-2 bg-gray-200 rounded-md text-sm w-full border-none outline-none
 }
+
 .placeholder{
   @apply text-xs text-[#060608] font-bold
 }
+
 .heading{
-  @apply text-xl  font-['Montserrat'] font-bold
+  @apply text-2xl  font-['Montserrat'] font-extrabold
 }
+
 .subheading{
   @apply text-lg font-['Montserrat'] font-bold
+}
+
+.toggler-button{
+
+  @apply mt-4 border-none p-1 bg-gray-200 h-[6vh] w-full flex rounded-md
+}
+.pay-now
+{
+  @apply  w-1/2 mr-auto rounded-md
+}
+
+.pay-del 
+{
+  @apply w-1/2 ml-auto rounded-md
+}
+.methods{
+  @apply h-[20vh] mt-4 mb-4 flex-col  
+}
+
+.pay{
+  @apply h-[6vh] bg-gray-200 p-2 mt-2 mb-2 font-bold flex 
+}
+
+.pay-now-select{
+  @apply bg-black mt-4 w-full text-white p-4 rounded-md
+}
+.pay-del-select{
+  @apply bg-black mt-4 w-full text-white p-4 rounded-md
 }

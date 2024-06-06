@@ -1,21 +1,20 @@
 import React from 'react'
 import PaymentMethods from '../Components/PaymentMethods'
 import InputField from '../Components/InputField'
+import PaymentWay from '../Components/PaymentMethods'
 
 const Details = () => {
    return ( 
 <div className="main-screen">
    
-    <div className="mx-auto">
-      <p className="heading">Complete Registration for the payment</p>
+    <div className="mx-auto w-full">
+      <p className="heading">Shipping and Payment</p>
       <p className="subheading">Personal details</p>
-      <InputField/>
-      <p className="subheading">Accepted Payment Methods</p> 
-    <PaymentMethods/>
+        <InputField/>
+        <PaymentWay/>
+       
+        {/* <p className="subheading">Payment Methods</p>  */}
 
-    <button className="bg-black rounded-md h-12 text-white w-full font-['Montserrat']"> 
-      Select Payment Option
-    </button>
     </div>
 </div>
 

@@ -1,34 +1,62 @@
 import React,{useState} from 'react'
+import { LuCreditCard } from "react-icons/lu";
+import { BiSolidBank } from "react-icons/bi";
+import { MdOutlineQrCodeScanner } from "react-icons/md";
 
-const images=[
-"https://i.pinimg.com/originals/38/2f/0a/382f0a8cbcec2f9d791702ef4b151443.png",
-"https://upload.wikimedia.org/wikipedia/commons/c/cb/Rupay-Logo.png"
-,"https://cdn4.iconfinder.com/data/icons/flat-brand-logo-2/512/visa-512.png"
-,"https://cdn.icon-icons.com/icons2/2699/PNG/512/upi_logo_icon_170312.png"
-]
-
-const PaymentMethods = () => {
-    const [highlighted, setHighlighted] = useState(false);
-    const handleClick = () => {
-      setHighlighted(!highlighted);
-    };
+const PaymentWay = () => {
+    const [option, setOption] = useState('Pay Now');
+    const handleToggle = () => {
+        setOption((prevOption) => (prevOption === 'Pay Now' ? 'Pay on Delivery' : 'Pay Now'));
+      };
     return (
-        <div className="grid grid-cols-5 gap-2 p-2 m-2">
-            {images.map((imageUrl, index) => (
-                <button className={`bg-gray-200 w-20 flex items-center justify-center ${highlighted ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'}`}
-                onClick={handleClick}
-                key={index}
-                >        
-                    <img key={index} src={imageUrl} 
-                    height={30} 
-                    width={30} 
-                    alt={`Payment Method ${index + 1}`} />
-                
-                </button>
-            ))}
+        <div>
+        <div  
+        className='toggler-button'
+        >
+            <button
+          onClick={() => handleToggle('Pay Now')}
+          className={`pay-now transition duration-300 ease-in-out ${option === 'Pay Now' ? 'bg-black text-white' : 'bg-gray-200 text-black'}`}
+        >
+          Pay Now
+        </button>
+        <button
+          onClick={() => handleToggle('Pay on Delivery')}
+          className={`pay-del transition duration-300 ease-in-out ${option === 'Pay on Delivery' ? 'bg-black text-white' : 'bg-gray-200 text-black'}`}
+        >
+          Pay on Delivery
+        </button>       
         </div>
-        )
+        <div>
+            {option === 'Pay Now' ? <PayNow/> : <PayDel/>}
+        </div>
+      </div>
+    )
+}
+
+const PayDel = () => {
+    return (
+    <button className="pay-del-select">
+        Click to Proceed 
+    </button>
+  )
+}
+const PayNow = () => {
+    return (
+        <div className="methods">
+            <div className="pay">
+            <LuCreditCard size={24}/>  Debit Card or Credit Card 
+
+            </div>
+            <div className="pay">
+               <BiSolidBank size={24}/> NetBanking
+            </div>
+            <div className="pay">
+               <MdOutlineQrCodeScanner size={24}/> UPI 
+            </div>
+            <div className="pay-now-select">Proceed with Pay</div>
+        </div>  
+    )
 }
 
 
-export default PaymentMethods
+export default PaymentWay

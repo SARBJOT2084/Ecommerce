@@ -12,7 +12,7 @@ const inputFields = [
 const Input = ({ label, placeholder }) => {
   return (
     <div>
-      <div className="text-xs text-[#35295D] font-bold">{label}</div>
+      <div className="text-xs text-[#35295D] font-extrabold">{label}</div>
       <input className="input-box" placeholder={placeholder} />
     </div>
   );
@@ -20,7 +20,7 @@ const Input = ({ label, placeholder }) => {
 const InputField = () => 
   {
     return (
-      <div className="grid grid-cols-2 gap-2 p-2 m-2">
+      <div className="grid grid-cols-2 gap-2">
         {/* Map over inputFields array and render each input field */}
         {inputFields.map((field, index) => (
           <Input index={index} 
